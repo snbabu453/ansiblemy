@@ -1,0 +1,16 @@
+---
+- hosts: node
+  become: yes
+  tasks:
+  - name: Ansible create file it does't exit example
+    file:
+      path: "/home/ubuntu/gani2.txt"
+      state: touch
+  - name: Create a conf file
+    file:
+      path: "/home/ubuntu/gani.conf"
+      state: touch
+  - name: Create a log file
+    file:
+      path: "/home/ubuntu/gani.log"
+      state: touch

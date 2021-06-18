@@ -1,0 +1,11 @@
+---
+- hosts: node
+  become: yes
+  tasks:
+  - name: Ansible create file if it does't exit
+    copy:
+      dest: "/home/ubuntu/gani.txt"
+      content: |
+        this is my file
+        this is second line
+        this is third line
