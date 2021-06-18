@@ -1,0 +1,12 @@
+---
+- hosts: node
+  become: yes
+  tasks:
+  - name: Ansible create multiple file in multiple location
+    file:
+      path: "{{ item.location }}"
+      state: touch
+      mode: "{{ item.mode}}"
+    with_items:
+    - { location: '/home/ubuntu/rvpfile1.txt', mode: '0566'}
+    - { location: '/etc/rvpfile2.txt', mode: '0766'}

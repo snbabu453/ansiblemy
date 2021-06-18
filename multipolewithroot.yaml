@@ -1,0 +1,14 @@
+---
+- hosts: node
+  become: yes
+  tasks:
+  - name: Ansible create multiple files example
+    file:
+      path: "{{ item }}"
+      state: touch
+      mode: 0775
+    with_items:
+    - root1.log
+    - root2.log
+    - root3.txt
+    - root4.conf
